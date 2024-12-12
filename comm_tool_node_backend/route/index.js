@@ -1,8 +1,13 @@
-const express =require("express")
-const userroute =require('./user')
- const router =express.Router()
+const express = require("express");
+const userroute = require('./user');
+const router = express.Router();
 
-const app=express()
-router.use('/user',userroute);
-  
-module.exports=router;
+// Route for '/user'
+router.use('/user', userroute);
+
+// Route for '/'
+router.get('/', (req, res) => {
+  res.send("Hello World");
+});
+
+module.exports = router;
